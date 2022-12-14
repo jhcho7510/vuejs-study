@@ -6,11 +6,141 @@
   <link href="main.css" rel="stylesheet">
 </head>
 <body>
-  <div id="app">
+    <div id="app">
+        <!-- 여기 #app 내부에 템플릿을 출력할 것입니다. -->
+        <div id="app">
+            <input v-model.number="budget">원 이하 필터링하기 
+            <input v-model.number="limit"> 개의 결과 출력하기
+            <p>{{ matched.length }}개 중에 {{ limited.length }}개를 출력하고 있습니다.</p>
+            <ul>
+              <!-- v-for에 최종 결과라고 할 수 있는 산출 속성 limited 사용하기 -->
+              <li v-for="item in limited" v-bind:key="item.id">
+                {{ item.name }} {{ item.price }}원
+              </li>
+            </ul>
+          </div>
+
+
+
+
+
+
+
+        <!-- 산출속성 -->
+        <!-- <ol>
+            <li>{{computedData}}</li>
+            <li>{{computedData}}</li>
+        </ol> -->
+        <!--메서드-->
+        <!-- <ol>
+            <li>{{methodsData()}}</li>
+            <li>{{methodsData()}}</li>
+        </ol> -->
+
+
+
+
+        <!-- <input v-model.number="width"> {{ width }}
+        <input v-model.number="halfWidth"> {{ halfWidth }} -->
+        
+        
+        
+        
+        <!-- <p>X: {{halfPoint.x}}</p>
+        <p>Y: {{halfPoint.y}}</p> -->
+
+
+        <!-- <p>{{width}}의 절반은 {{halfWidth}} 입니다.</p> -->
+
+
+
+
+        <!-- <input id="message" v-on:input="handleInput">
+        <button data-update="jQuery!">jQuery로 변경하기</button> -->
+        <!-- <div class="content">...</div>
+        <div v-on:click="scrollTop">
+            1<br>
+            2<br>
+            3<br>
+            4<br>
+            5<br>
+            페이지 상단으로 이동하기<br>
+        </div> -->
+        <!-- <header v-bind:class="{compact: scrollY < 200}">
+            200px 이상 스크롤했으면, .compact 클래스 추가하기
+        </header> -->
+
+
+
+        <!-- <input type="range" v-model.number="val">{{val}} -->
+
+
+        <!-- <input type="file" v-on:change="handleChange">
+        <div v-if="preview"><img v-bind:src="preview"></div>         -->
+        <!-- <select v-model="val" multiple>
+            <option disabled="disabled">선택해주세요</option>
+            <option value="a">a</option>
+            <option value="b">b</option>
+            <option value="c">c</option>
+        </select>
+        <p>{{val}}</p> -->
+
+        <!-- <label><input type="radio" value="a" v-model="val">a</label>
+        <label><input type="radio" value="b" v-model="val">b</label>
+        <label><input type="radio" value="c" v-model="val">c</label>
+        <p>{{val}}</p> -->
+
+        <!-- <label><input type="checkbox" v-model="val" value="A">A</label>        
+        <label><input type="checkbox" v-model="val" value="B">B</label>        
+        <label><input type="checkbox" v-model="val" value="C">C</label>        
+        <p>{{val}}</p> -->
+        <!-- <input type="checkbox" v-model="val" true-value="Yes" false-value="No">{{val}} -->
+        <!-- <input v-model="message"> -->
+        <!-- <textarea v-model="message"></textarea> -->
+        <!-- <p>{{message}}</p> -->
+        <!-- <input v-model="message">
+        <p>{{message}}</p> -->
+        <!-- <input v-on:keydown.13="handler">
+        <input v-on:keydown.enter="handler"> -->
+        <!-- 
+            .capture 
+                : 버블링모드의 이벤트보다 먼저 이벤트가 발생
+                : console 창에서 div1을 제일먼저 찍음, 
+                  없으면.. div1이 맨 나중에 찍힘
+
+        -->
+        <!-- <div v-on:click.capture="handler('div1')">
+            div1
+            <div v-on:click="handler('div2')">
+              div2
+              <div v-on:click.prevent="handler('div3')">div3</div>
+            </div>
+          </div>         -->
+        <!-- <div v-on:click="handler('div1')">
+            div1
+            <a href="#top" v-on:click.prevent="handler('div2')">div2</a>
+        </div> -->
+        <!-- <div v-on:click.right="handler">example</div>
+        <div v-on:click.right.prevent="handler">example</div> -->
+        <!-- <input v-bind:value="message" v-on:change="handleInput"> -->
+        <!-- <button v-on:click="handleClick($event)">클릭</button> -->
+
+        <!-- <button v-on:click="handleClick">최고의바보는</button>
+        <button @click="handleClick2">두번째바보는</button> -->
+  <!-- <div id="app" v-cloak> -->
     <!-- 여기 #app 내부에 템플릿을 출력할 것입니다. -->
-        <button v-on:click="handleClick">Count up</button>
+    <!-- {{message}} -->
+
+    <!-- <a v-bind:href="url" v-pre>
+        Hello {{message}}
+    </a> -->
+    <!-- <span v-html="message"></span>
+    <span v-text="message"/> -->
+
+
+        <!-- <button v-on:click="handleClick">Count up</button>
         <button v-on:click="show=!show">표시/비표시</button>
-        <span ref="count" v-if="show">0</span>
+        <span ref="count" v-if="show">0</span> -->
     <!-- <p ref="hello">Hello</p> -->
     <!--
         <ul>
@@ -66,6 +196,8 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@12.1.5"></script><!-- smooth 스크롤을 위해서 추가-->
+  <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
   <script src="main.js"></script>
 </body>
 </html>
